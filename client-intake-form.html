@@ -100,105 +100,140 @@
     <p>Fill this out with as much detail as you can — it's how I put together your quote and first draft. Takes about 5 minutes. I'll reply within a day.</p>
   </div>
 
-<section id="project-inquiry" class="inquiry-section">
-  <div class="container">
-    <div class="section__head">
-      <p class="eyebrow">Start Your Project</p>
-      <h2>Tell me about your business.</h2>
-      <p>
-        Fill out the form below and I'll get back to you with a quote and project plan.
-      </p>
+  <form id="briefForm" action="https://formspree.io/f/mzdqnyaa" method="POST">
+    <input type="hidden" name="_subject" value="New landing page project brief">
+
+    <fieldset>
+      <div class="fig-label">Fig. 01 — Your business</div>
+      <div class="field">
+        <label for="bizName">Business name</label>
+        <input type="text" id="bizName" name="Business name" required>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="bizType">What you do <span class="opt">e.g. "coffee shop", "dental clinic"</span></label>
+          <input type="text" id="bizType" name="What you do" required>
+        </div>
+        <div class="field">
+          <label for="bizArea">Area you serve</label>
+          <input type="text" id="bizArea" name="Area served" placeholder="e.g. Iloilo City and nearby">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="fig-label">Fig. 02 — Goal &amp; contact</div>
+      <div class="field">
+        <label>What should visitors do on your page?</label>
+        <div class="radio-row">
+          <div class="radio-card">
+            <input type="radio" id="goalCall" name="Main goal" value="Call" required>
+            <label for="goalCall">Call</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="goalMsg" name="Main goal" value="Message">
+            <label for="goalMsg">Message</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="goalVisit" name="Main goal" value="Visit in person">
+            <label for="goalVisit">Visit</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="goalBook" name="Main goal" value="Book an appointment">
+            <label for="goalBook">Book</label>
+          </div>
+        </div>
+      </div>
+      <div class="row2">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="Email">
+        </div>
+        <div class="field">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="Phone">
+        </div>
+      </div>
+      <div class="field">
+        <label for="messenger">Messenger link or Instagram handle <span class="opt">optional</span></label>
+        <input type="text" id="messenger" name="Messenger/Instagram" placeholder="m.me/yourpage or @yourhandle">
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="fig-label">Fig. 03 — Content</div>
+      <div class="field">
+        <label for="desc">Tell me about your business <span class="opt">a few sentences — what makes you different, who your customers are</span></label>
+        <textarea id="desc" name="Business description" required></textarea>
+      </div>
+      <div class="field">
+        <label for="services">Main services or products to highlight</label>
+        <textarea id="services" name="Services or products"></textarea>
+      </div>
+      <div class="field">
+        <label for="tagline">Tagline idea <span class="opt">optional, if you already have one in mind</span></label>
+        <input type="text" id="tagline" name="Tagline idea">
+      </div>
+      <div class="field">
+        <label>Logo &amp; photos</label>
+        <div class="radio-row">
+          <div class="radio-card">
+            <input type="radio" id="assetsYes" name="Logo and photos" value="I have them ready">
+            <label for="assetsYes">I have them ready</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="assetsHelp" name="Logo and photos" value="I need help">
+            <label for="assetsHelp">I need help</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="assetsUnsure" name="Logo and photos" value="Not sure yet">
+            <label for="assetsUnsure">Not sure yet</label>
+          </div>
+        </div>
+        <p class="hint">This form doesn't accept file attachments — once you've submitted, please email your logo and photos to <a href="mailto:cabriracharles@gmail.com">cabriracharles@gmail.com</a> or send them over Messenger directly.</p>
+      </div>
+      <div class="field">
+        <label for="style">Style preference <span class="opt">optional — colors, vibe, or sites you like</span></label>
+        <textarea id="style" name="Style preference"></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <div class="fig-label">Fig. 04 — Domain &amp; anything else</div>
+      <div class="field">
+        <label>Domain</label>
+        <div class="radio-row">
+          <div class="radio-card">
+            <input type="radio" id="domainHave" name="Domain" value="I already have one">
+            <label for="domainHave">I have one</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="domainBuy" name="Domain" value="I need to buy one">
+            <label for="domainBuy">I need one</label>
+          </div>
+          <div class="radio-card">
+            <input type="radio" id="domainFree" name="Domain" value="Use the free option for now">
+            <label for="domainFree">Use free option</label>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label for="domainName">If you already have a domain, what is it? <span class="opt">optional</span></label>
+        <input type="text" id="domainName" name="Existing domain">
+      </div>
+      <div class="field">
+        <label for="notes">Anything else I should know? <span class="opt">optional</span></label>
+        <textarea id="notes" name="Additional notes"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="submit-row">
+      <button type="submit" id="submitBtn">Send my project brief</button>
+      <p class="form-note">Sent straight to my inbox — I'll reply within a day.</p>
     </div>
 
-<form class="inquiry-form">
-
-  <div class="form-group">
-    <label for="name">Your Name *</label>
-    <input type="text" id="name" name="name" required>
-  </div>
-
-  <div class="form-group">
-    <label for="business">Business Name *</label>
-    <input type="text" id="business" name="business" required>
-  </div>
-
-  <div class="form-group">
-    <label for="email">Email Address *</label>
-    <input type="email" id="email" name="email" required>
-  </div>
-
-  <div class="form-group">
-    <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone">
-  </div>
-
-  <div class="form-group">
-    <label for="industry">Business Type</label>
-    <input type="text" id="industry" name="industry" placeholder="Coffee Shop, Dental Clinic, Salon, etc.">
-  </div>
-
-  <div class="form-group">
-    <label for="website-type">Website Type *</label>
-    <select id="website-type" name="website_type" required>
-      <option value="">Select an option</option>
-      <option>One-Page Landing Page</option>
-      <option>Multi-Page Website</option>
-      <option>Not Sure Yet</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="goal">Main Goal of the Website *</label>
-    <select id="goal" name="goal" required>
-      <option value="">Select an option</option>
-      <option>Get More Inquiries</option>
-      <option>Get More Calls</option>
-      <option>Get More Messenger Messages</option>
-      <option>Show Products or Services</option>
-      <option>Build Credibility</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="domain">Do you already have a domain name?</label>
-    <select id="domain" name="domain">
-      <option>Yes</option>
-      <option>No</option>
-      <option>Not Sure</option>
-    </select>
-  </div>
-
-  <div class="form-group">
-    <label for="socials">Facebook Page / Social Media Links</label>
-    <input type="text" id="socials" name="socials">
-  </div>
-
-  <div class="form-group">
-    <label for="message">Tell me about your project *</label>
-    <textarea
-      id="message"
-      name="message"
-      rows="6"
-      placeholder="Describe your business, services, and what you'd like your website to accomplish."
-      required></textarea>
-  </div>
-
-  <div class="form-group">
-    <label>
-      <input type="checkbox" required>
-      I understand that project pricing depends on scope and requirements.
-    </label>
-  </div>
-
-  <button type="submit" class="btn btn--primary">
-    Request a Quote
-  </button>
-
-</form>
-
-  </div>
-</section>
-
+    <div class="status status--err" id="statusErr">Something went wrong sending this — please try again, or message me directly.</div>
+  </form>
 
   <div class="success-state" id="successState">
     <h2>Got it — thank you!</h2>
