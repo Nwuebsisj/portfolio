@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bright Smile Dental — Friendly Dental Care for the Family</title>
+<meta name="description" content="Gentle care, clear pricing, no surprises. Walk-ins welcome.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230E6657'/%3E%3Cpath d='M8 16c2 4 14 4 16 0' stroke='%23FF8A65' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mint:#BFEAE0; --mint-light:#E3F6F1; --teal:#0E6657; --teal-deep:#0B4F41;
+    --coral:#FF8A65; --coral-deep:#E36A47; --paper:#FBFEFC; --ink:#143C35; --muted:#5C7A73; --border:#D9EEE7;
+    --display:'Baloo 2', sans-serif; --body:'Nunito Sans', sans-serif;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--body); line-height:1.6; }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  h1,h2,h3{ font-family:var(--display); font-weight:700; margin:0; }
+  p{ margin:0; }
+  :focus-visible{ outline:2px solid var(--teal); outline-offset:3px; }
+  .container{ max-width:1080px; margin-inline:auto; padding-inline:24px; }
+  .btn{ display:inline-flex; align-items:center; gap:8px; padding:14px 28px; border-radius:999px; font-weight:700; font-family:var(--display); font-size:0.98rem; transition:transform .15s ease; }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn--coral{ background:var(--coral); color:#fff; box-shadow:0 6px 0 var(--coral-deep); }
+  .btn--coral:active{ transform:translateY(2px); box-shadow:0 3px 0 var(--coral-deep); }
+  .btn--outline{ border:2px solid var(--teal); color:var(--teal); }
+
+  .nav{ display:flex; align-items:center; justify-content:space-between; padding-block:22px; }
+  .logo{ font-family:var(--display); font-size:1.4rem; color:var(--teal-deep); display:flex; align-items:center; gap:8px; }
+  .nav a.btn{ padding:10px 22px; font-size:0.85rem; }
+
+  .hero{ background:var(--mint-light); padding-block:50px 0; position:relative; overflow:hidden; }
+  .hero__grid{ display:grid; grid-template-columns:1.05fr 0.95fr; gap:40px; align-items:center; padding-bottom:90px; }
+  .hero h1{ font-size:clamp(2.3rem,4.2vw + 1rem,3.4rem); line-height:1.08; color:var(--teal-deep); }
+  .hero h1 span{ color:var(--coral); }
+  .hero__lede{ margin-top:16px; color:var(--muted); font-size:1.08rem; max-width:40ch; }
+  .hero__ctas{ display:flex; flex-wrap:wrap; gap:14px; margin-top:28px; }
+  @media (max-width:900px){ .hero__grid{ grid-template-columns:1fr; } .hero__art{ order:-1; max-width:260px; margin-inline:auto; } }
+  .hero__art{ aspect-ratio:1/1; }
+  .smile-wave{ display:block; width:100%; }
+
+  .section{ padding-block:64px; }
+  .section__head{ max-width:520px; margin-bottom:36px; text-align:left; }
+  .eyebrow{ font-family:var(--display); font-weight:600; letter-spacing:0.04em; color:var(--coral-deep); font-size:0.95rem; }
+  .section__head h2{ font-size:clamp(1.8rem,3vw + 1rem,2.3rem); margin-top:8px; color:var(--teal-deep); }
+
+  .service-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  @media (max-width:860px){ .service-grid{ grid-template-columns:repeat(2,1fr); } }
+  .service-card{ background:#fff; border:1px solid var(--border); border-radius:18px; padding:22px; text-align:center; }
+  .service-card__badge{ width:48px; height:48px; border-radius:50%; background:var(--mint); display:flex; align-items:center; justify-content:center; margin:0 auto 12px; font-size:1.3rem; }
+  .service-card h3{ font-size:1.05rem; color:var(--teal-deep); }
+  .service-card p{ font-size:0.85rem; color:var(--muted); margin-top:6px; }
+
+  .expect{ background:var(--teal); color:#fff; position:relative; }
+  .expect .eyebrow{ color:var(--coral); }
+  .expect h2{ color:#fff; }
+  .expect-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  @media (max-width:860px){ .expect-grid{ grid-template-columns:1fr; } }
+  .expect-item{ background:rgba(255,255,255,0.07); border-radius:16px; padding:24px; }
+  .expect-item h3{ font-size:1.1rem; }
+  .expect-item p{ margin-top:8px; color:#CFE9E2; font-size:0.92rem; }
+
+  .strip{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:20px; background:#fff; border:1px solid var(--border); border-radius:18px; padding:26px 30px; }
+  .strip div h3{ font-family:var(--body); font-size:0.92rem; color:var(--muted); font-weight:600; }
+  .strip div p{ font-family:var(--display); font-size:1.2rem; margin-top:4px; color:var(--teal-deep); }
+
+  .cta-banner{ background:var(--coral); color:#fff; text-align:center; padding-block:60px; position:relative; }
+  .cta-banner h2{ font-size:clamp(1.8rem,3vw + 1rem,2.4rem); color:#fff; }
+  .cta-banner p{ margin-top:12px; opacity:.95; }
+  .cta-banner .btn{ margin-top:24px; background:#fff; color:var(--coral-deep); box-shadow:none; }
+
+  .footer{ padding-block:30px; text-align:center; font-size:0.85rem; color:var(--muted); }
+  .footer a{ text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header class="container nav">
+  <div class="logo">
+    <svg width="26" height="26" viewBox="0 0 26 26"><rect width="26" height="26" rx="8" fill="#0E6657"/><path d="M6 13c1.6 3.2 12.4 3.2 14 0" stroke="#FF8A65" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg>
+    Bright Smile
+  </div>
+  <a class="btn btn--coral" href="#book">Book appointment</a>
+</header>
+
+<section class="hero">
+  <div class="container hero__grid">
+    <div>
+      <h1>Friendly dental care for the <span>whole family</span>.</h1>
+      <p class="hero__lede">Walk-ins welcome. Gentle care, clear pricing, no surprises.</p>
+      <div class="hero__ctas">
+        <a class="btn btn--coral" href="#book">Book an appointment</a>
+        <a class="btn btn--outline" href="#services">Our services</a>
+      </div>
+    </div>
+    <svg class="hero__art" viewBox="0 0 200 200" aria-hidden="true">
+      <circle cx="100" cy="100" r="90" fill="#BFEAE0"/>
+      <path d="M55 95c5 25 85 25 90 0" stroke="#0E6657" stroke-width="6" fill="none" stroke-linecap="round"/>
+      <circle cx="68" cy="80" r="6" fill="#0E6657"/>
+      <circle cx="132" cy="80" r="6" fill="#0E6657"/>
+    </svg>
+  </div>
+  <svg class="smile-wave" viewBox="0 0 1200 80" preserveAspectRatio="none"><path d="M0 0 Q 300 80 600 20 T 1200 0 V80 H0 Z" fill="#FBFEFC"/></svg>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Our services</p>
+      <h2>Everything for a healthy smile.</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><div class="service-card__badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6657" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4c-2.5 0-4 1.6-4 4 0 3 1 5 1 9a2 2 0 0 0 4 0c0-2 .5-3 1-3s1 1 1 3a2 2 0 0 0 4 0c0-4 1-6 1-9 0-2.4-1.5-4-4-4-1 0-1.5.5-2 .5s-1-.5-2-.5z"/></svg></div><h3>Cleanings</h3><p>Routine checkups &amp; cleanings.</p></div>
+      <div class="service-card"><div class="service-card__badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6657" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l2 5 3-10 2 6h6"/><circle cx="19" cy="6" r="2"/></svg></div><h3>Checkups</h3><p>Thorough exams, clear explanations.</p></div>
+      <div class="service-card"><div class="service-card__badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6657" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8"/></svg></div><h3>Whitening</h3><p>Safe, gentle brightening treatments.</p></div>
+      <div class="service-card"><div class="service-card__badge"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0E6657" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></div><h3>Kids' Dentistry</h3><p>Patient, friendly care for little ones.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section expect">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">What to expect</p>
+      <h2>Dental visits, without the dread.</h2>
+    </div>
+    <div class="expect-grid">
+      <div class="expect-item"><h3>Gentle, modern equipment</h3><p>Comfort-first techniques for nervous patients of any age.</p></div>
+      <div class="expect-item"><h3>Clear pricing, no surprises</h3><p>You'll know the cost before any work begins.</p></div>
+      <div class="expect-item"><h3>Walk-ins welcome</h3><p>Booked or not, we'll always try to fit you in.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="book">
+  <div class="container strip">
+    <div><h3>Hours</h3><p>Mon–Sat, 9AM–6PM</p></div>
+    <div><h3>Location</h3><p>2nd Floor, Main Square</p></div>
+    <div><h3>Booking</h3><p>Call or walk in anytime</p></div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2>Let's get that smile sorted.</h2>
+    <p>Book online or just walk in — we'll find you a slot.</p>
+    <a class="btn" href="#book">Book an appointment</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <p>This is a concept demo built by Charles. <a href="index.html">See more landing page work →</a></p>
+</footer>
+
+</body>
+</html>
