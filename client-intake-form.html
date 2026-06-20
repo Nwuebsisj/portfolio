@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Project Brief — Charles, Landing Pages</title>
+<meta name="description" content="Tell me about your business so I can put together your landing page.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1F66'/%3E%3Cpath d='M9 9h14v14H9z' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3Cpath d='M9 16h14' stroke='%23FF4E1F' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F7FB; --paper-card:#FFFFFF; --ink:#14181F; --muted:#5B6472;
+    --blue:#2350FF; --blue-deep:#0B1F66; --grid-line:rgba(35,80,255,0.10);
+    --signal:#FF4E1F; --signal-deep:#D63E14; --border:#DDE2EE; --ok:#1FA786;
+    --font-display:'Space Grotesk', sans-serif; --font-body:'IBM Plex Sans', sans-serif; --font-mono:'IBM Plex Mono', monospace;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.6;
+    background-image:linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+    background-size:28px 28px; }
+  h1,h2{ font-family:var(--font-display); color:var(--blue-deep); margin:0; letter-spacing:-0.01em; }
+  p{ margin:0; }
+  a{ color:var(--blue); }
+  :focus-visible{ outline:2px solid var(--blue); outline-offset:2px; }
+  .wrap{ max-width:720px; margin-inline:auto; padding:48px 20px 80px; }
+
+  .top{ margin-bottom:36px; }
+  .brand{ display:flex; align-items:center; gap:10px; font-family:var(--font-display); font-weight:700; color:var(--blue-deep); }
+  .brand__mark{ width:26px; height:26px; border:2px solid var(--blue-deep); border-radius:4px; position:relative; }
+  .brand__mark::after{ content:""; position:absolute; left:3px; right:3px; top:50%; height:2px; background:var(--signal); transform:translateY(-50%); }
+  .eyebrow{ font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--signal-deep); margin-top:24px; }
+  .top h1{ font-size:clamp(1.8rem,3.2vw + 1rem,2.4rem); margin-top:8px; }
+  .top p{ color:var(--muted); margin-top:12px; max-width:55ch; }
+
+  form{ background:var(--paper-card); border:1px solid var(--border); border-radius:14px; padding:clamp(20px,4vw,36px); }
+
+  fieldset{ border:none; padding:0; margin:0 0 36px; }
+  fieldset:last-of-type{ margin-bottom:0; }
+  .fig-label{ display:flex; align-items:center; gap:12px; font-family:var(--font-mono); font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--blue); margin-bottom:18px; }
+  .fig-label::after{ content:""; flex:1; height:1px; background:var(--border); }
+
+  .field{ margin-bottom:18px; }
+  .field:last-child{ margin-bottom:0; }
+  label{ display:block; font-weight:600; font-size:0.95rem; margin-bottom:6px; }
+  label .opt{ font-weight:400; color:var(--muted); font-size:0.82rem; }
+  .hint{ font-size:0.82rem; color:var(--muted); margin-top:4px; }
+
+  input[type=text], input[type=email], input[type=tel], select, textarea{
+    width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:8px;
+    font-family:var(--font-body); font-size:1rem; color:var(--ink); background:#fff;
+    transition:border-color .15s ease;
+  }
+  input:focus, select:focus, textarea:focus{ border-color:var(--blue); }
+  textarea{ resize:vertical; min-height:90px; }
+
+  .radio-row{ display:flex; flex-wrap:wrap; gap:10px; }
+  .radio-card{ flex:1 1 140px; }
+  .radio-card input{ position:absolute; opacity:0; pointer-events:none; }
+  .radio-card label{ display:block; border:1px solid var(--border); border-radius:8px; padding:12px 14px; font-weight:500; font-size:0.92rem; cursor:pointer; text-align:center; transition:border-color .15s ease, background .15s ease; margin:0; }
+  .radio-card input:checked + label{ border-color:var(--blue); background:#EEF1FF; color:var(--blue-deep); font-weight:700; }
+  .radio-card input:focus-visible + label{ outline:2px solid var(--blue); outline-offset:2px; }
+
+  .row2{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  @media (max-width:560px){ .row2{ grid-template-columns:1fr; } }
+
+  .submit-row{ margin-top:8px; }
+  button[type=submit]{
+    width:100%; padding:16px; border:none; border-radius:999px; background:var(--signal); color:#fff;
+    font-family:var(--font-body); font-weight:700; font-size:1.02rem; cursor:pointer;
+    box-shadow:0 6px 0 var(--signal-deep); transition:transform .15s ease, box-shadow .15s ease;
+  }
+  button[type=submit]:hover{ transform:translateY(-2px); }
+  button[type=submit]:active{ transform:translateY(2px); box-shadow:0 3px 0 var(--signal-deep); }
+  button[type=submit]:disabled{ opacity:0.6; cursor:not-allowed; transform:none; }
+  .form-note{ text-align:center; font-size:0.82rem; color:var(--muted); margin-top:14px; font-family:var(--font-mono); }
+
+  .status{ margin-top:20px; padding:16px 18px; border-radius:10px; font-size:0.95rem; display:none; }
+  .status.show{ display:block; }
+  .status--ok{ background:#E9F8F3; color:var(--ok); border:1px solid #BFEAE0; }
+  .status--err{ background:#FFF1ED; color:var(--signal-deep); border:1px solid #FFD9CC; }
+
+  .success-state{ display:none; text-align:center; padding:40px 20px; }
+  .success-state.show{ display:block; }
+  .success-state h2{ font-size:1.6rem; }
+  .success-state p{ color:var(--muted); margin-top:10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <a class="brand" href="index.html">
+      <span class="brand__mark" aria-hidden="true"></span>
+      Charles
+    </a>
+    <p class="eyebrow">New project brief</p>
+    <h1>Let's build your landing page.</h1>
+    <p>Fill this out with as much detail as you can — it's how I put together your quote and first draft. Takes about 5 minutes. I'll reply within a day.</p>
+  </div>
+
+<section id="project-inquiry" class="inquiry-section">
+  <div class="container">
+    <div class="section__head">
+      <p class="eyebrow">Start Your Project</p>
+      <h2>Tell me about your business.</h2>
+      <p>
+        Fill out the form below and I'll get back to you with a quote and project plan.
+      </p>
+    </div>
+
+<form class="inquiry-form">
+
+  <div class="form-group">
+    <label for="name">Your Name *</label>
+    <input type="text" id="name" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="business">Business Name *</label>
+    <input type="text" id="business" name="business" required>
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email Address *</label>
+    <input type="email" id="email" name="email" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone">
+  </div>
+
+  <div class="form-group">
+    <label for="industry">Business Type</label>
+    <input type="text" id="industry" name="industry" placeholder="Coffee Shop, Dental Clinic, Salon, etc.">
+  </div>
+
+  <div class="form-group">
+    <label for="website-type">Website Type *</label>
+    <select id="website-type" name="website_type" required>
+      <option value="">Select an option</option>
+      <option>One-Page Landing Page</option>
+      <option>Multi-Page Website</option>
+      <option>Not Sure Yet</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="goal">Main Goal of the Website *</label>
+    <select id="goal" name="goal" required>
+      <option value="">Select an option</option>
+      <option>Get More Inquiries</option>
+      <option>Get More Calls</option>
+      <option>Get More Messenger Messages</option>
+      <option>Show Products or Services</option>
+      <option>Build Credibility</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="domain">Do you already have a domain name?</label>
+    <select id="domain" name="domain">
+      <option>Yes</option>
+      <option>No</option>
+      <option>Not Sure</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="socials">Facebook Page / Social Media Links</label>
+    <input type="text" id="socials" name="socials">
+  </div>
+
+  <div class="form-group">
+    <label for="message">Tell me about your project *</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+      placeholder="Describe your business, services, and what you'd like your website to accomplish."
+      required></textarea>
+  </div>
+
+  <div class="form-group">
+    <label>
+      <input type="checkbox" required>
+      I understand that project pricing depends on scope and requirements.
+    </label>
+  </div>
+
+  <button type="submit" class="btn btn--primary">
+    Request a Quote
+  </button>
+
+</form>
+
+  </div>
+</section>
+
+
+  <div class="success-state" id="successState">
+    <h2>Got it — thank you!</h2>
+    <p>I'll go through everything and get back to you within a day with a quote and next steps.</p>
+    <p style="margin-top:14px;">One more thing — if you have a logo or photos ready, please email them to <a href="mailto:cabriracharles@gmail.com">cabriracharles@gmail.com</a> or send them over Messenger, since this form can't accept attachments.</p>
+  </div>
+
+</div>
+
+<script>
+  var form = document.getElementById('briefForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var statusErr = document.getElementById('statusErr');
+  var successState = document.getElementById('successState');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    statusErr.classList.remove('show');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending…';
+
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        form.style.display = 'none';
+        document.querySelector('.top').style.display = 'none';
+        successState.classList.add('show');
+      } else {
+        statusErr.classList.add('show');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send my project brief';
+      }
+    }).catch(function(){
+      statusErr.classList.add('show');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send my project brief';
+    });
+  });
+</script>
+
+</body>
+</html>
